@@ -26,10 +26,10 @@
 
   function updateCountdown() {
     const now = new Date();
-    const targetDate = new Date(now.getFullYear(), now.getMonth(), 3);
+    const targetDate = new Date(now.getFullYear(), now.getMonth(), 19);
 
     // Si el 3 de este mes ya pasó, avanzamos al próximo mes
-    if (now.getDate() >= 3) {
+    if (now.getDate() >= 19) {
       targetDate.setMonth(targetDate.getMonth() + 1);
     }
 
@@ -44,11 +44,11 @@
     );
     const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
-    const todayMessageElement = document.getElementById("todayMessage");
-    const countdownElement = document.getElementById("countdown");
+    //const todayMessageElement = document.getElementById("todayMessage");
+    //const countdownElement = document.getElementById("countdown");
 
-    if (now.getDate() === 3) {
-      todayMessageElement.textContent = "¡Es Hoy! Feliz primer mes 💚";
+    if (now.getDate() === 19) {
+      todayMessageElement.textContent = "";
     } else {
       todayMessageElement.textContent = ""; // Borra el mensaje si no es el día 3
 

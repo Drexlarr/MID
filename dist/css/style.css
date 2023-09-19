@@ -1133,7 +1133,7 @@ label {
 	right: -100px;
 	width: 1440px;
 	height: 324px;
-	background-image: url("../images/header-illustration-light.png");
+	background-image: url("../images/header-illustration-light-white.png");
 }
 .lights-off .site-header::before {
 	background-image: url("../images/header-illustration-dark.svg");
@@ -1219,8 +1219,8 @@ label {
 	margin: 0 auto;
 	box-shadow: 48px 16px 48px rgba(24, 37, 56, 0.12);
 	border-radius: 4px;
-	transform: perspective(1000px) rotateY(16deg) rotateX(2deg) rotateZ(-7deg)
-		scaleY(0.95) translatex(2%);
+	transform: perspective(600px) rotateY(16deg) rotateX(2deg) rotateZ(-7deg)
+		scaleY(0.95) translatex(1%);
 }
 .lights-off .hero-media-image {
 	box-shadow: 48px 16px 48px rgba(0, 0, 0, 0.2);
@@ -1438,7 +1438,7 @@ label {
 	background: #e9edf3;
 }
 .body-wrap {
-	background: #fff;
+	background: #ece1ed;
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
