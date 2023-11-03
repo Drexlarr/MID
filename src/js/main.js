@@ -48,7 +48,7 @@
     const countdownElement = document.getElementById("countdown");
 
     if (now.getDate() === 3) {
-      todayMessageElement.textContent = "¡Es Hoy! Feliz primer mes 💚";
+      todayMessageElement.textContent = "¡Es Hoy! Feliz tercer mes 💚";
     } else {
       todayMessageElement.textContent = ""; // Borra el mensaje si no es el día 3
 
@@ -81,6 +81,17 @@
 
   // Actualizar al cargar la página
   updateCountdown();
+
+  function lunaOculta() {
+    const showBtn = document.querySelector("#buttonOculto");
+    const oculto = document.getElementById("oculto");
+    showBtn.addEventListener("click", () => {
+      oculto.style.display = "block";
+      showBtn.style.display = "none";
+    });
+  }
+
+  lunaOculta();
 
   if (body.classList.contains("has-animations")) {
     window.addEventListener("load", revealAnimations);
