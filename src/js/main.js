@@ -1,3 +1,38 @@
+let clickCount = 0;
+function moveNo() {
+  const noButton = document.querySelector(".no-button");
+  if (noButton) {
+    const xDir = Math.random() < 0.5 ? -1 : 1; // Dirección aleatoria en el eje X
+    const yDir = Math.random() < 0.5 ? -1 : 1; // Dirección aleatoria en el eje Y
+
+    noButton.style.setProperty("--x-dir", xDir);
+    noButton.style.setProperty("--y-dir", yDir);
+
+    noButton.style.animation = "none"; // Eliminar cualquier animación anterior
+    void noButton.offsetWidth; // Trigger reflow
+    noButton.style.animation = "move 0.5s ease forwards"; // Aplicar nueva animación
+  }
+  clickCount++;
+
+  if (clickCount === 6) {
+    noButton.style.display = "none";
+  }
+
+  if (clickCount <= 7) {
+    const message = document.getElementById(`message${clickCount}`);
+    message.style.display = "block";
+  }
+}
+function showThanks() {
+  const messages = document.querySelectorAll(".message");
+  messages.forEach((message) => {
+    message.style.display = "none";
+  });
+  const thanksMessage = document.getElementById("thanksMessage");
+  thanksMessage.style.display = "block";
+  const noButton = document.querySelector(".no-button");
+  noButton.style.display = "none";
+}
 (function () {
   const doc = document;
   const rootEl = doc.documentElement;
@@ -59,9 +94,19 @@
       return num < 10 ? "0" + num : num;
     }
 
-    countdownElement.innerHTML = `${addLeadingZero(days)}:${addLeadingZero(
-      hours
-    )}:${addLeadingZero(minutes)}:${addLeadingZero(seconds)}`;
+    //countdownElement.innerHTML = `${addLeadingZero(days)}:${addLeadingZero(
+    //hours
+    //)}:${addLeadingZero(minutes)}:${addLeadingZero(seconds)}`;
+  }
+  function clickNo(event) {
+    let boton = document.getElementById("falseButton");
+    let top = this.getRandomNumber(20, window.innerHeight - 20);
+    let left = this.getRandomNumber(0, window.innerWidth - 100);
+    if (boton) {
+      boton.style.position = "absolute";
+      boton.style.top = top + "px";
+      boton.style.left = left + "px";
+    }
   }
 
   // Actualizar cada segundo

@@ -1,3 +1,44 @@
+.button2 {
+	background-color: #e74c3c; /* Rojo */
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 5px;
+	margin: 5px;
+	font-size: 16px;
+	outline: none;
+	width: 100px;
+	transition: transform 0.3s;
+}
+
+.button2:hover {
+	background-color: #c0392b; /* Rojo más oscuro en hover */
+}
+
+.no-button {
+	position: relative;
+}
+
+.no-button.clicked {
+	animation: move 0.5s ease forwards;
+}
+
+@keyframes move {
+	0% {
+		transform: translate(0, 0);
+	}
+	50% {
+		transform: translate(
+			calc(40px * var(--x-dir)),
+			calc(40px * var(--y-dir))
+		);
+	}
+	100% {
+		transform: translate(0, 0);
+	}
+}
+
 html {
 	line-height: 1.15;
 	-ms-text-size-adjust: 100%;

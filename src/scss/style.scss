@@ -1,10 +1,8 @@
 /*--------------------------------------------------------------
 # Variables, functions and mixins
 --------------------------------------------------------------*/
-@import "abstracts/variables",
-        "abstracts/functions",
-        "abstracts/mixins",
-        'abstracts/include-media';
+@import "abstracts/variables", "abstracts/functions", "abstracts/mixins",
+	"abstracts/include-media";
 
 /*--------------------------------------------------------------
 1.0 Normalize
@@ -77,3 +75,40 @@
 # Lights
 --------------------------------------------------------------*/
 @import "layout/lights";
+
+.button {
+	background-color: #e74c3c; /* Rojo */
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 5px;
+	margin: 5px;
+	font-size: 16px;
+	outline: none;
+	transition: transform 0.3s;
+}
+
+.button:hover {
+	background-color: #c0392b; /* Rojo más oscuro en hover */
+}
+
+.no-button {
+	position: relative;
+}
+
+.no-button.clicked {
+	animation: move 0.5s ease forwards;
+}
+
+@keyframes move {
+	0% {
+		transform: translate(0, 0);
+	}
+	50% {
+		transform: translate(40px, 0);
+	}
+	100% {
+		transform: translate(0, 0);
+	}
+}
