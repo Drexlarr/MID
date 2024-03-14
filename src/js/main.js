@@ -1,19 +1,25 @@
 let clickCount = 0;
 
-window.addEventListener("load", function () {
-    const request = {
-        eventName: "on-core-portal-is-ready",
-    };
-  window.opener.postMessage(JSON.stringify(request), "*");
-
-  window.addEventListener("message", function (event) {
-    console.log("Nuevo mensaje");
-  });
+window.addEventListener("message", function (event) {
+  console.log("Encontré este mensaje", event.data);
+  const message = JSON.parse(event.data);
+  const request = {
+    eventName: "on-core-portal-is-ready",
+  };
+  if (message.eventName === "on-core-portal-ready") {
+    window.opener.postMessage(JSON.stringify(request), "*");
+  }
 });
+function hacerConsoleLog() {
+  const request = {
+    eventName: "on-core-portal-refresh-opportunity",
+  };
 
+  window.opener.postMessage(JSON.stringify(request), "*");
+}
 window.addEventListener("beforeunload", function () {
-    const request = {
-        eventName: "on-core-portal-is-closed",
-    };
+  const request = {
+    eventName: "on-core-portal-is-closed",
+  };
   window.opener.postMessage(JSON.stringify(request), "*");
 });
