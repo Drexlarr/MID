@@ -2,7 +2,7 @@ let clickCount = 0;
 
 window.addEventListener("message", function (event) {
   console.log("Encontré este mensaje", event.data);
-  const message = JSON.parse(event.data);
+  const message = event.data;
   const request = {
     eventName: "on-core-portal-is-ready",
   };
