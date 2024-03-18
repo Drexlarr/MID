@@ -7,7 +7,7 @@ window.addEventListener("message", function (event) {
     eventName: "on-core-portal-is-ready",
   };
   if (message.eventName === "on-core-portal-ready") {
-    window.opener.postMessage(JSON.stringify(request), "*");
+    window.opener.postMessage(request, "*");
   }
 });
 function hacerConsoleLog() {
