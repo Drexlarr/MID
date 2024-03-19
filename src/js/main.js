@@ -6,7 +6,7 @@ window.addEventListener("message", function (event) {
   const request = {
     eventName: "on-core-portal-is-ready",
   };
-  if (message.eventName === "on-core-portal-ready") {
+  if (message.eventName === "on-core-portal-is-ready") {
     window.opener.postMessage(request, "*");
   }
 });
