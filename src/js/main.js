@@ -70,17 +70,7 @@
   // Actualizar al cargar la página
   updateCountdown();
 
-  // Actualizar cada segundo
-  setInterval(updateCountdown, 1000);
-
-  // Actualizar al cargar la página
-  updateCountdown();
-
-  // Actualizar cada segundo
-  setInterval(updateCountdown, 1000);
-
-  // Actualizar al cargar la página
-  updateCountdown();
+  seccionOculta();
 
   if (body.classList.contains("has-animations")) {
     window.addEventListener("load", revealAnimations);
@@ -105,5 +95,14 @@
         labelText.innerHTML = "light";
       }
     }
+  }
+
+  function seccionOculta() {
+    const showBtn = document.querySelector("#buttonOculto");
+    const oculto = document.getElementById("oculto");
+    showBtn.addEventListener("click", () => {
+      oculto.style.display = "block";
+      showBtn.style.display = "none";
+    });
   }
 })();
