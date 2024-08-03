@@ -48,7 +48,7 @@
     const countdownElement = document.getElementById("countdown");
 
     if (now.getDate() === 3) {
-      todayMessageElement.textContent = "Felices 6 meses, mi corazón";
+      todayMessageElement.textContent = "Feliz primer año, mi corazón";
     } else {
       todayMessageElement.textContent = ""; // Borra el mensaje si no es el día 3
 
